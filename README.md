@@ -102,7 +102,7 @@ python -m unittest discover -s tests -v
 
 ## License
 
-This project is open source and available under the MIT License.
+This project is open source and available under the GPLv3 License.
 
 ## Acknowledgments
 
