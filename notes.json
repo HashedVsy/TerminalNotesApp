@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1001,
+    "content": "Test note 1"
+  },
+  {
+    "id": 1002,
+    "content": "Test note 2 with longer content to test"
+  }
+]

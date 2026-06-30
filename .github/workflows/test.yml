@@ -1,0 +1,36 @@
+name: Test Application
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        # No external dependencies beyond Python standard library
+
+    - name: Run tests
+      run: |
+        python -m unittest discover -s tests -v
+
+    - name: Test application functionality
+      run: |
+        # Test that the main script runs without syntax errors
+        python -m py_compile main.py
+        # Test packaging scripts syntax
+        bash -n package_linux.sh
+        powershell -Command "& { Set-StrictMode -Version Latest; .\package_win.ps1 -WhatIf }"

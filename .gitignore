@@ -1,0 +1,8 @@
+.agents
+__pycache__
+*.exe
+*.out
+*.bin
+.claude
+dist
+build
